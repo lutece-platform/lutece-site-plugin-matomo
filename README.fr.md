@@ -5,21 +5,21 @@
 
 ## Introduction
 
-This plugin lets you add a Matomo tracker script into your site pages
+Ce plugin vous permet d'ajouter un tracker Matomo dans toutes les pages du site
 
-It provides also an embeded Matomo dashboard in the Back Office
+Il offre également une interface de consultation du tableau de bord Matomo
 
 ## Configuration
 
-Define in Site properties :
+Définir dans les Propriétés du site :
  
-* The site ID
-* The Matomo server HTTP URL
-* The Matomo server HTTPS URL
+* L'ID du site
+* L'URL du serveur HTTP Matomo
+* L'URL du serveur HTTPS Matomo
 * The widget Authentication Token (optionnal)
 
 
-Initial default values can be configured in the **matomo.properties** as follow :
+Les valeurs initiales peuvent être configurées dans le fichier **matomo.properties** comme suit :
 
 
 ```
@@ -34,12 +34,12 @@ matomo.default.widget.auth.token=6b34579abd8b74a12b87a809ef060185
 ```
 
 
-Add the mMtomo bookmark into a site template, typically **page_frameset.html** 
+Ajouter le signet `matomo` dans un template du site, typiquement **page_frameset.html** 
 
 
 ```
 
-<!-- Matomo include -->
+<!-- matomo include -->
 ${matomo}                        
                     
 ```
