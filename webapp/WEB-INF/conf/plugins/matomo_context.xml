@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" >
+
+    <bean id="matomo.sitePropertiesGroup" class="fr.paris.lutece.portal.service.site.properties.SitePropertiesGroup" >
+        <property name="nameKey">
+            <value>matomo.site_properties.name</value>
+        </property>
+        <property name="descriptionKey">
+            <value>matomo.site_properties.description</value>
+        </property>
+        <property name="keysPrefix">
+            <value>matomo.site_property.</value>
+        </property>   
+    </bean>
+
+</beans>

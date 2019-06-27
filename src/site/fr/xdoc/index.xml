@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <properties>
+        <title>Plugin Matomo</title>
+    </properties>
+    <body>
+        <section name="Plugin Matomo">
+            
+            <p>
+                <img src="images/matomo-logo.jpg" />
+            </p>
+            
+            <subsection name="Introduction">
+                <p>Ce plugin vous permet d'ajouter un tracker Matomo dans toutes les pages du site </p>
+                <p>Il offre également une interface de consultation du tableau de bord Matomo </p>
+            </subsection>
+            <subsection name="Configuration">
+                <p>
+                    Définir dans les Propriétés du site :
+                    <ul>
+                        <li>L'ID du site</li>
+                        <li>L'URL du serveur HTTP Matomo</li>
+                        <li>L'URL du serveur HTTPS Matomo</li>
+                        <li>The widget Authentication Token (optionnal)</li>
+                    </ul>
+                </p>
+                <p>
+                    Les valeurs initiales peuvent être configurées dans le fichier
+                    <b>matomo.properties</b> comme suit :
+                </p>
+                <p>
+                    <pre>
+# matomo properties file
+
+matomo.default.site.id=15
+matomo.default.server.http.url=http://www.example.com/matomo/
+matomo.default.server.https.url=https://www.example.com/matomo/
+matomo.default.widget.auth.token=6b34579abd8b74a12b87a809ef060185                    
+                    </pre>  
+                </p>              
+                <p>
+                    Ajouter le signet <code>matomo</code> dans un template du site, typiquement <b>page_frameset.html</b> 
+                </p>
+                <p>
+                    <pre>
+&lt;!-- matomo include --&gt;
+${matomo}                        
+                    </pre>                    
+                </p>
+            </subsection>
+        </section>
+    </body>
+</document>
+

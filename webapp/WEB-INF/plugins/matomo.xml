@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><plug-in>
+    <name>matomo</name>
+    <class>fr.paris.lutece.portal.service.plugin.PluginDefaultImplementation</class>
+    <version>1.0.0-SNAPSHOT</version>
+    <documentation/>
+    <installation/>
+    <changes/>
+    <user-guide/>
+    <description>matomo.plugin.description</description>
+    <provider>matomo.plugin.provider</provider>
+    <provider-url>http://dev.lutece.paris.fr</provider-url>
+    <icon-url>images/admin/skin/plugins/matomo/matomo.png</icon-url>
+    <copyright>Copyright (c) 2015 City of Paris</copyright>
+    <db-pool-required>0</db-pool-required>
+    
+    <core-version-dependency>
+        <min-core-version>5.0.0</min-core-version>
+        <max-core-version/>	
+    </core-version-dependency>
+
+    <!-- Admin features parameters -->
+    <admin-features>
+        <admin-feature>
+            <feature-id>MATOMO_MANAGEMENT</feature-id>
+            <feature-title>matomo.adminFeature.ManageMatomo.name</feature-title>
+            <feature-description>matomo.adminFeature.ManageMatomo.description</feature-description>
+            <feature-level>2</feature-level>
+            <feature-url>jsp/admin/plugins/matomo/Matomo.jsp</feature-url>
+            <feature-icon-url/>
+      </admin-feature>
+    </admin-features>    
+
+    <!-- Page Include Service -->
+    <page-include-services>
+        <page-include-service>
+            <page-include-service-id>matomo.include.analytics.service.name</page-include-service-id>
+            <page-include-service-class>fr.paris.lutece.plugins.matomo.web.MatomoInclude</page-include-service-class>
+        </page-include-service>
+    </page-include-services>
+
+</plug-in>

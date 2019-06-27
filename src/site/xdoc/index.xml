@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <properties>
+        <title>Plugin Matomo</title>
+    </properties>
+    <body>
+        <section name="Plugin Matomo">
+            
+            <p>
+                <img src="images/matomo-logo.jpg" />
+            </p>
+            
+            <subsection name="Introduction">
+                <p>This plugin lets you add a Matomo tracker script into your site pages </p>
+               <p>It provides also an embeded Matomo dashboard in the Back Office </p>
+            </subsection>
+            <subsection name="Configuration">
+                <p>
+                    Define in Site properties :
+                    <ul>
+                        <li>The site ID</li>
+                        <li>The Matomo server HTTP URL</li>
+                        <li>The Matomo server HTTPS URL</li>
+                        <li>The widget Authentication Token (optionnal)</li>
+                    </ul>
+                </p>
+                <p>
+                    Initial default values can be configured in the <b>matomo.properties</b> as follow :
+                </p>
+                <p>
+                    <pre>
+# matomo properties file
+
+matomo.default.site.id=15
+matomo.default.server.http.url=http://www.example.com/matomo/
+matomo.default.server.https.url=https://www.example.com/matomo/
+matomo.default.widget.auth.token=6b34579abd8b74a12b87a809ef060185                    
+                    </pre>  
+                </p>              
+                <p>
+                    Add the mMtomo bookmark into a site template, typically <b>page_frameset.html</b> 
+                </p>
+                <p>
+                    <pre>
+&lt;!-- Matomo include --&gt;
+${matomo}                        
+                    </pre>                    
+                </p>
+            </subsection>
+        </section>
+    </body>
+</document>
+
