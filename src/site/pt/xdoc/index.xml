@@ -11,21 +11,21 @@
             </p>
             
             <subsection name="Introduction">
-                <p>Ce plugin vous permet d'ajouter un tracker Matomo dans toutes les pages du site </p>
-               <p>Il offre également une interface de consultation du tableau de bord Matomo </p>
+                <p>This plugin lets you add a Matomo tracker script into your site pages </p>
+               <p>It provides also an embeded Matomo dashboard in the Back Office </p>
             </subsection>
             <subsection name="Configuration">
                 <p>
-                    Définir dans les Propriétés du site :
+                    Define in Site properties :
                     <ul>
-                        <li>L'ID du site</li>
-                        <li>L'URL du serveur HTTP Matomo</li>
-                        <li>L'URL du serveur HTTPS Matomo</li>
+                        <li>The site ID</li>
+                        <li>The Matomo server HTTP URL</li>
+                        <li>The Matomo server HTTPS URL</li>
                         <li>The widget Authentication Token (optionnal)</li>
                     </ul>
                 </p>
                 <p>
-                    Les valeurs initiales peuvent être configurées dans le fichier <b>matomo.properties</b> comme suit :
+                    Initial default values can be configured in the <b>matomo.properties</b> as follow :
                 </p>
                 <p>
                     <pre>
@@ -42,7 +42,7 @@ matomo.default.widget.auth.token=6b34579abd8b74a12b87a809ef060185
                 </p>
                 <p>
                     <pre>
-&lt;!-- matomo include --&gt;
+&lt;!-- Matomo include --&gt;
 ${matomo}                        
                     </pre>                    
                 </p>
