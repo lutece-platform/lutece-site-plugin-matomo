@@ -3,14 +3,14 @@
     <parent>
         <artifactId>lutece-global-pom</artifactId>
         <groupId>fr.paris.lutece.tools</groupId>
-        <version>7.0.2</version>
+        <version>8.0.0-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>fr.paris.lutece.plugins</groupId>
     <artifactId>plugin-matomo</artifactId>
     <packaging>lutece-plugin</packaging>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>2.0.0-SNAPSHOT</version>
     <name>Lutece matomo plugin</name>
 
     <repositories>
@@ -37,15 +37,13 @@
         <dependency>
             <groupId>fr.paris.lutece</groupId>
             <artifactId>lutece-core</artifactId>
-            <version>[5.0.0,7.9.9)</version>
+            <version>[8.0.0-SNAPSHOT,)</version>
             <type>lutece-core</type>
         </dependency>
     </dependencies>
 
     <properties>
         <componentName>matomo</componentName>
-        <jiraProjectName>MATOMO</jiraProjectName>
-        <jiraComponentId />
     </properties>
     
     <scm>

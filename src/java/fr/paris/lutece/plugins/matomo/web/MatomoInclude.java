@@ -44,7 +44,7 @@ import fr.paris.lutece.util.html.HtmlTemplate;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * Include of the Matomo analytics code
@@ -117,7 +117,7 @@ public class MatomoInclude implements PageInclude
     {
         if ( PluginService.isPluginEnable( PLUGIN_NAME ) && ( request != null ) )
         {
-            Map<String, Object> model = new HashMap<String, Object>( );
+            Map<String, Object> model = new HashMap<>( );
             String strSiteId = DatastoreService.getDataValue( DSKEY_SITE_ID, _strDefaultSiteId );
             String strServerHttpUrl = DatastoreService.getDataValue( DSKEY_SERVER_HTTP_URL, _strDefaultServerHttpUrl );
             String strServerHttpsUrl = DatastoreService.getDataValue( DSKEY_SERVER_HTTPS_URL, _strDefaultServerHttpsUrl );
