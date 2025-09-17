@@ -37,14 +37,18 @@ import fr.paris.lutece.portal.service.datastore.DatastoreService;
 import fr.paris.lutece.portal.util.mvc.admin.MVCAdminJspBean;
 import fr.paris.lutece.portal.util.mvc.admin.annotations.Controller;
 import fr.paris.lutece.portal.util.mvc.commons.annotations.View;
+import fr.paris.lutece.portal.web.cdi.mvc.Models;
 
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * ManageMatomo JSP Bean class for JSP Bean
  */
+@RequestScoped
+@Named
 @Controller( controllerJsp = "Matomo.jsp", controllerPath = "jsp/admin/plugins/matomo/", right = "MATOMO_MANAGEMENT" )
 public class ManageMatomoJspBean extends MVCAdminJspBean
 {
@@ -58,6 +62,9 @@ public class ManageMatomoJspBean extends MVCAdminJspBean
     private static final String VIEW_MATOMO_HOME = "home";
     private static final String MARK_AUTH_TOKEN = "auth_token";
 
+    @Inject
+    private Models model;
+
     /**
      * Return the MatomoDashboard page
      * 
@@ -69,7 +76,6 @@ public class ManageMatomoJspBean extends MVCAdminJspBean
     public String getMatomoDashboard( HttpServletRequest request )
     {
         String strAuthToken = DatastoreService.getDataValue( DSKEY_AUTH_TOKEN, "" );
-        Map<String, Object> model = getModel( );
 
         if ( !strAuthToken.trim( ).equals( "" ) )
         {
