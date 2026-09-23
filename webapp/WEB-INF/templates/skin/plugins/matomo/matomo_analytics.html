@@ -1,6 +1,9 @@
 <@cTpl>
-<!-- Matomo -->
-<script type="text/javascript">
+tarteaucitron.user.matomoId = ${site_id};
+var u=("https:" == document.location.protocol) ? "${server_https_url}" : "${server_http_url}";
+tarteaucitron.user.matomoHost = u;
+<#-- Matomo Analytics - Default code to user without cConsent Macro
+<script>
 var _paq = _paq || [];
 _paq.push([function() {
   var self = this;
@@ -24,14 +27,14 @@ var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[
 s.parentNode.insertBefore(g,s); })();
 
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-/* Track button "btn-matomo" click action                                                                                                                           */
+/* Track button "btn-matomo" click action                                                                                                                          */
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-/* Add "btn-matomo" class to the HTML element you want to track                                                                                                     */
+/* Add "btn-matomo" class to the HTML element you want to track                                                                                                    */
 /* Add data-pw-cat="AnyCategoryYouWant" to send custom info if not a "Download" category is set                                                                    */
 /* Add data-pw-action="AnyActionYouWant" to give an action name, if not the HTML element type is <set>                                                             */
 /* Add data-pw-name="AnyTitleYouWant" to give a name, if not the page title is given                                                                               */
 /* -- Example --                                                                                                                                                   */
-/* <button class="btn btn-default btn-matomo" data-pw-cat="Create Account" data-pw-action="Create" [data-pw-name="Validation button"] type="submit">Send</button>   */
+/* <button class="btn btn-default btn-matomo" data-pw-cat="Create Account" data-pw-action="Create" [data-pw-name="Validation button"] type="submit">Send</button>  */
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 document.querySelectorAll(".btn-matomo").forEach(function(element) {
   element.addEventListener("click", function(e) {
@@ -55,5 +58,5 @@ document.querySelectorAll(".btn-matomo").forEach(function(element) {
 });
 </script>
 <noscript><p><img src="${server_https_url}matomo.php?idsite=${site_id}" style="border:0;" alt="" /></p></noscript>
-<!-- End Matomo Code -->
+-->
 </@cTpl>
