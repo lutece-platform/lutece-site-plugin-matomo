@@ -1,5 +1,10 @@
 
+<#assign matomoServerUrl = (dskey('matomo.site_property.server.https.url')!'')?trim>
+<#if matomoServerUrl?has_content && !matomoServerUrl?starts_with('<') && matomoServerUrl != 'DS Value Missing'>
 <#if auth_token ?? ><#assign token = "&token_auth=${auth_token}"><#else><#assign token = ""></#if>
 <@div id='widgetIframe'>
 <iframe width="100%" height="1500" src="#dskey{matomo.site_property.server.https.url}index.php?module=Widgetize&action=iframe&widget=1&moduleToWidgetize=Dashboard&actionToWidgetize=index&idSite=#dskey{matomo.site_property.site.id}&period=day&date=yesterday&disableLink=1&widget=1${token}" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe>
 </@div>
+<#else>
+<@alert color='warning' iconTitle='alert-triangle' title="#i18n{matomo.dashboard.notConfigured}" />
+</#if>
