@@ -38,6 +38,7 @@ import fr.paris.lutece.portal.service.datastore.DatastoreService;
 import fr.paris.lutece.portal.service.includes.PageInclude;
 import fr.paris.lutece.portal.service.plugin.PluginService;
 import fr.paris.lutece.portal.service.template.AppTemplateService;
+import fr.paris.lutece.portal.service.template.HtmlMarkup;
 import fr.paris.lutece.portal.service.util.AppPropertiesService;
 import fr.paris.lutece.util.html.HtmlTemplate;
 
@@ -127,7 +128,8 @@ public class MatomoInclude implements PageInclude
 
             HtmlTemplate template = AppTemplateService.getTemplate( TEMPLATE_MATOMO_INCLUDE, request.getLocale( ), model );
 
-            rootModel.put( MARK_MATOMO, template.getHtml( ) );
+            // the tracking script rendered by the plugin, written as is by the cConsent macro of the core
+            rootModel.put( MARK_MATOMO, HtmlMarkup.of( template.getHtml( ) ) );
         }
         else
         {

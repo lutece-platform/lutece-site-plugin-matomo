@@ -1,6 +1,8 @@
+<#-- Written into a script by the cConsent macro of the core: the values are JavaScript-escaped, a site id that is not a number is written as a string -->
+<#assign matomoSiteId = (site_id!'')?trim>
 <@cTpl>
-tarteaucitron.user.matomoId = ${site_id};
-var u=("https:" == document.location.protocol) ? "${server_https_url}" : "${server_http_url}";
+tarteaucitron.user.matomoId = <#if matomoSiteId?matches('[0-9]+')>${matomoSiteId?number?c}<#else>'${matomoSiteId?js_string?no_esc}'</#if>;
+var u=("https:" == document.location.protocol) ? "${server_https_url?js_string?no_esc}" : "${server_http_url?js_string?no_esc}";
 tarteaucitron.user.matomoHost = u;
 <#-- Matomo Analytics - Default code to user without cConsent Macro
 <script>
@@ -20,8 +22,8 @@ _paq.push([function() {
 }]);
 _paq.push(['trackPageView']);
 _paq.push(['enableLinkTracking']);
-(function(){ var u=(("https:" == document.location.protocol) ? "${server_https_url}" : "${server_http_url}");
-_paq.push(['setSiteId', ${site_id}]);
+(function(){ var u=(("https:" == document.location.protocol) ? "${server_https_url?js_string?no_esc}" : "${server_http_url?js_string?no_esc}");
+_paq.push(['setSiteId', '${matomoSiteId?js_string?no_esc}']);
 _paq.push(['setTrackerUrl', u+'matomo.php']);
 var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.defer=true; g.async=true; g.src=u+'matomo.js';
 s.parentNode.insertBefore(g,s); })();
@@ -57,6 +59,6 @@ document.querySelectorAll(".btn-matomo").forEach(function(element) {
   });
 });
 </script>
-<noscript><p><img src="${server_https_url}matomo.php?idsite=${site_id}" style="border:0;" alt="" /></p></noscript>
+<noscript><p><img src="${server_https_url}matomo.php?idsite=${matomoSiteId?url}" style="border:0;" alt="" /></p></noscript>
 -->
 </@cTpl>
