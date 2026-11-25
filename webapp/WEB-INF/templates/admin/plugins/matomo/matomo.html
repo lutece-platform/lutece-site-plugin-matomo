@@ -1,14 +1,18 @@
 
 <#assign matomoServerUrl = safeUrl( (dskey('matomo.site_property.server.https.url')!'')?trim, '' )>
 <#assign matomoSiteId = (dskey('matomo.site_property.site.id')!'')?trim>
+<#assign pageTitle><span class="avatar avatar-sm bg-orange-lt me-2" aria-hidden="true"><@icon style='chart-line' /></span>#i18n{matomo.dashboard.pageTitle}</#assign>
 <@pageContainer>
-<@pageHeader title='#i18n{matomo.dashboard.pageTitle}' />
+<@pageColumn>
+<@pageHeader title=pageTitle />
+<@messages infos=infos![] errors=errors![] warnings=warnings![] />
 <#if matomoServerUrl?has_content && !matomoServerUrl?starts_with('<') && matomoServerUrl != 'DS Value Missing'>
-<#if auth_token ?? ><#assign token = "&token_auth=" + auth_token?url><#else><#assign token = ""></#if>
+<#if auth_token ?? ><#assign token = "&token_auth=" + auth_token?url("UTF-8")><#else><#assign token = ""></#if>
 <@div id='widgetIframe'>
-<iframe title="#i18n{matomo.dashboard.pageTitle}" width="100%" height="1500" src="${matomoServerUrl}index.php?module=Widgetize&action=iframe&widget=1&moduleToWidgetize=Dashboard&actionToWidgetize=index&idSite=${matomoSiteId?url}&period=day&date=yesterday&disableLink=1&widget=1${token}" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+<iframe title="#i18n{matomo.dashboard.pageTitle}" width="100%" height="1500" src="${matomoServerUrl}index.php?module=Widgetize&action=iframe&widget=1&moduleToWidgetize=Dashboard&actionToWidgetize=index&idSite=${matomoSiteId?url("UTF-8")}&period=day&date=yesterday&disableLink=1&widget=1${token}" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe>
 </@div>
 <#else>
 <@alert color='warning' iconTitle='alert-triangle' title="#i18n{matomo.dashboard.notConfigured}" />
 </#if>
+</@pageColumn>
 </@pageContainer>
