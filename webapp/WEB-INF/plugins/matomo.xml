@@ -9,7 +9,7 @@
     <description>matomo.plugin.description</description>
     <provider>matomo.plugin.provider</provider>
     <provider-url>http://dev.lutece.paris.fr</provider-url>
-    <icon-url>images/admin/skin/plugins/matomo/matomo.png</icon-url>
+    <icon-url>themes/admin/shared/plugins/matomo/images/matomo.png</icon-url>
     <copyright>Copyright (c) 2025 City of Paris</copyright>
     <db-pool-required>0</db-pool-required>
     
@@ -26,7 +26,7 @@
             <feature-description>matomo.adminFeature.ManageMatomo.description</feature-description>
             <feature-level>2</feature-level>
             <feature-url>jsp/admin/plugins/matomo/Matomo.jsp</feature-url>
-            <feature-icon-url/>
+            <icon-url>ti ti-device-analytics</icon-url>
       </admin-feature>
     </admin-features>    
 
